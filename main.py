@@ -21,8 +21,8 @@ def main():
     result = parallel_processing(n,m,data)
     
     # TODO: print out the results, each pair in it's own line
-    for thread_index, sak_laiks in result:
-        print(thread_index, sak_laiks)
+    for thread_index, start_time in result:
+        print(thread_index, start_time)
 
 
 if __name__ == "__main__":
