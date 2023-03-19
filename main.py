@@ -4,15 +4,18 @@
 def parallel_processing(n, m, data):
 
     output = []
-    reizes=[0]*n
+    laiki=[0]*n  #saraksts ar garumu n, kur visiem elementiem ir piešķirta 0, lai uzraudzītu katra darbinieka laiku
+
     for x in range(m):
-        laiks_min=min(reizes)
-        pirm_index=reizes.index(laiks_min)
+        laiks_min=min(laiki) #tiek noteikts darbinieks ar visīsāko apstrādes laiku
+        pirm_index=laiki.index(laiks_min) #tiek noteikts darbinieka indekss ar visīsāko apstrādes laiku,
         output.append((pirm_index,laiks_min))
         if x<len(data):
-            reizes[pirm_index]+=data[x]
+            laiki[pirm_index]+=data[x]
 
     return output
+
+
 
 def main():
 
