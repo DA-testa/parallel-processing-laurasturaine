@@ -8,7 +8,7 @@ def parallel_processing(n, m, data):
     for x in range(m):
         laiks_min=min(reizes)
         pirm_index=reizes.index(laiks_min)
-        output.append((reizes,laiks_min))
+        output.append((pirm_index,laiks_min))
         if x<len(data):
             reizes[pirm_index]+=data[x]
 
