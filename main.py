@@ -1,30 +1,31 @@
 # python3
 
+
 def parallel_processing(n, m, data):
+
     output = []
-    # TODO: write the function for simulating parallel tasks, 
-    # create the output pairs
+    laiki=[0]*n  #saraksts ar garumu n, kur visiem elementiem ir piešķirta 0, lai uzraudzītu katra darbinieka laiku
+
+    for x in range(m):
+        laiks_min=min(laiki) #tiek noteikts darbinieks ar visīsāko apstrādes laiku
+        pirm_index=laiki.index(laiks_min) #tiek noteikts darbinieka indekss ar visīsāko apstrādes laiku,
+        output.append((pirm_index,laiks_min))
+        if x<len(data):
+            laiki[pirm_index]+=data[x]
 
     return output
 
+
+
 def main():
-    # TODO: create input from keyboard
-    # input consists of two lines
-    # first line - n and m
-    # n - thread count 
-    # m - job count
-    n = 0
-    m = 0
 
-    # second line - data 
-    # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
-    data = []
-
-    # TODO: create the function
+    n,m=map(int,input().split())
+    data=list(map(int,input().split()))
     result = parallel_processing(n,m,data)
     
     # TODO: print out the results, each pair in it's own line
-
+    for pav_index, sak_laiks in result:
+        print(pav_index, sak_laiks)
 
 
 if __name__ == "__main__":
