@@ -2,16 +2,15 @@
 
 
 def parallel_processing(n, m, data):
-    reizes1=[0]*n
+
     output = []
-
+    reizes=[0]*n
     for x in range(m):
-        laiks_min=min(reizes1)
-        index=reizes1.index(laiks_min)
-        output.append((reizes1,laiks_min))
+        laiks_min=min(reizes)
+        pirm_index=reizes.index(laiks_min)
+        output.append((reizes,laiks_min))
         if x<len(data):
-            reizes1[index]+=data[x]
-
+            reizes[pirm_index]+=data[x]
 
     return output
 
